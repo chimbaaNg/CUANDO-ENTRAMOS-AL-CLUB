@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuando Entramos al Club</title>
+    <!-- Enlazamos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ================= LOGO / TÍTULO ================= -->
+    <header id="logo-titulo">
+        <!-- Al inicio muestra el texto, luego JS puede reemplazarlo con imagen -->
+        <img src="Imagenes/Logo2.PNG" width="600">
+    </header>
+
+    <!-- ================= CUENTA ATRÁS ================= -->
+    <section id="cuenta-atras">
+        <div id="contador">
+            <span id="dias">00</span> Días 
+            <span id="horas">00</span> H 
+            <span id="minutos">00</span> M 
+            <span id="segundos">00</span> S
+        </div>
+    </section>
+
+    <!-- ================= SLIDER PORTADA ================= -->
+    <section id="slider">
+        <img src="imagenes/Galery8.PNG" class="slide" alt="Portada 1" width="320">
+        <img src="imagenes/Galery2.PNG" class="slide" alt="Portada 2" width="320">
+        <img src="imagenes/Galery3.PNG" class="slide" alt="Portada 3" width="320">
+        <img src="imagenes/Galery4.PNG" class="slide" alt="Portada 4" width="320">
+        <img src="imagenes/Galery5.PNG" class="slide" alt="Portada 5" width="320">
+        <img src="imagenes/Galery6.PNG" class="slide" alt="Portada 6" width="320">
+        <img src="imagenes/Galery1.PNG" class="slide" alt="Portada 8" width="320">
+
+        <!-- Puedes añadir más imágenes en la carpeta images/ -->
+    </section>
+
+    <!-- ================= REPRODUCTOR AUDIO ================= -->
+  <label class="btn-wrapper">
+  <input type="checkbox" class="toggle" />
+  <div class="btn">
+    <span class="btn-txt play">Play</span>
+    <span class="btn-txt playing">Playing</span>
+    <div class="dot"></div>
+  </div>
+</label>
+
+
+    <!-- ================= PRESAVE BLOQUEADO ================= -->
+    <section id="presave">
+<section id="presave">
+    <a href="https://link-presave-external.com" id="boton-presave" class="bloqueado">
+        Click si te ha gustado...
+    </a>
+</section>
+
+    </section>
+
+    <!-- Enlazamos JS -->
+    <script src="script.js"></script>
+</body>
+</html>

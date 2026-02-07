@@ -64,23 +64,12 @@ actualizarCuentaAtras();
 // ===========================
 // REPRODUCTOR AUDIO PLAY/PAUSE
 // ===========================
-playPauseBtn.addEventListener("click", () => {
-    if (audio.paused) {
-        audio.play();
-        playPauseBtn.textContent = "⏸️"; // cambia el icono
-    } else {
-        audio.pause();
-        playPauseBtn.textContent = "▶️";
-    }
-    audio.addEventListener("timeupdate", () => {
-    const minutosActual = Math.floor(audio.currentTime / 60);
-    const segundosActual = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
-    const minutosTotal = Math.floor(audio.duration / 60);
-    const segundosTotal = Math.floor(audio.duration % 60).toString().padStart(2, '0');
-    document.getElementById("tiempo-audio").textContent = `${minutosActual}:${segundosActual} / ${minutosTotal}:${segundosTotal}`;
-});
-
-});
+// Solución: Esperar interacción del usuario primero
+document.body.addEventListener('click', function init() {
+    audio.muted = false;
+    audio.play().then(() => audio.pause()); // Precarga
+    document.body.removeEventListener('click', init);
+}, { once: true });
 audioToggle.checked = true;  // Activa el estado "playing" en CSS
 audioToggle.checked = false; // Activa el estado "play" en CSS
 
@@ -113,4 +102,5 @@ presaveBtn.addEventListener("click", (e) => {
         e.preventDefault(); // bloqueado → no hace nada
     }
 });
+
 

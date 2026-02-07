@@ -56,31 +56,38 @@ body {
 /* ================= SLIDER PORTADA ================= */
 #slider {
     position: relative;
-    width: 80%;        /* disminuye el ancho del slider */
-    max-width: 350px;  /* ancho máximo permitido */
-    margin-bottom: 20px;
+    width: 90%;
+    max-width: 380px;
+    margin: 0 auto;
+    margin-bottom: 90px;
+
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(255,255,255,0.2);
-    height: auto;      /* altura automática según la imagen */
+    box-shadow: 0 0 20px rgba(0,0,0,0.25);
 }
 
+/* Imágenes */
 #slider .slide {
     width: 100%;
-    height: auto;          /* mantiene proporción de la imagen */
-    object-fit: contain;   /* evita que se recorte */
+    height: auto;
+    display: block;
+
+    object-fit: contain;
     opacity: 0;
+
     position: absolute;
     top: 0;
     left: 0;
+
     transition: opacity 1s ease-in-out;
 }
 
-/* Opcional: que la primera imagen sea visible */
-#slider .slide:first-child {
+/* Imagen activa */
+#slider .slide.activa {
     opacity: 1;
     position: relative;
 }
+
 
 
 
@@ -334,5 +341,6 @@ body {
         font-size: 0.9rem;
     }
 }
+
 
 

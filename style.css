@@ -72,7 +72,7 @@ body {
     object-fit: contain;
     border-radius: 12px;
 
-    opacity: 0;
+    opacity: 1;
     position: absolute;
     top: 0;
     left: 0;
@@ -338,6 +338,7 @@ body {
         font-size: 0.9rem;
     }
 }
+
 
 
 

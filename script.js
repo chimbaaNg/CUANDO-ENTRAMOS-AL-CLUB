@@ -81,6 +81,8 @@ playPauseBtn.addEventListener("click", () => {
 });
 
 });
+audioToggle.checked = true;  // Activa el estado "playing" en CSS
+audioToggle.checked = false; // Activa el estado "play" en CSS
 
 // ===========================
 // DESBLOQUEO DEL PRESAVE
@@ -111,3 +113,4 @@ presaveBtn.addEventListener("click", (e) => {
         e.preventDefault(); // bloqueado → no hace nada
     }
 });
+

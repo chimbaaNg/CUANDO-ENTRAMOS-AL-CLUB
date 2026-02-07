@@ -287,11 +287,6 @@ body {
     opacity: 0;
 }
 
-/* Shine animation */
-@keyframes shine {
-    0% { background-position: 0; }
-    100% { background-position: 200px; }
-}
 
 /* ================= PRESAVE DESBLOQUEADO ================= */
 #boton-presave.desbloqueado {
@@ -339,4 +334,5 @@ body {
         font-size: 0.9rem;
     }
 }
+
 

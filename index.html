@@ -48,7 +48,21 @@
   <!-- Audio click del botón -->
   <audio id="audio-presave" src="audio/CEAC PREVIEW.mp3" preload="auto"></audio>
 </section>
+<!-- 1. ELEMENTO DE AUDIO (oculto) -->
+<audio id="audio-presave" preload="metadata">
+    <source src="audio/CEAC PREVIEW.mp3.mpeg" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+</audio>
 
+<!-- 2. TU BOTÓN CSS (como ya lo tienes) -->
+<div class="btn-wrapper" id="audioBtn">
+    <input type="checkbox" class="toggle" id="audioToggle">
+    <div class="btn">
+        <span class="btn-txt play">Reproducir</span>
+        <span class="btn-txt playing">Pausar</span>
+        <span class="dot"></span>
+    </div>
+</div>
     <!-- ================= PRESAVE BLOQUEADO ================= -->
     <section id="presave">
 <section id="presave">
@@ -111,6 +125,7 @@ document.addEventListener('click', function initAudio() {
     document.removeEventListener('click', initAudio);
 });
 </script>
+
 
 
 

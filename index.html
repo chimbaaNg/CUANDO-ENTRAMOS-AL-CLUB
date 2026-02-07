@@ -64,6 +64,53 @@
 </body>
 </html>
 
+<!-- 3. JAVASCRIPT (al final del body) -->
+<script>
+// ====== CÓDIGO PARA VINCULAR TODO ======
+
+// 1. Seleccionar elementos
+const audio = document.getElementById('miAudio');
+const audioBtn = document.getElementById('audioBtn');
+const audioToggle = document.getElementById('audioToggle');
+
+// 2. Función para play/pause
+function toggleAudio() {
+    if (audio.paused) {
+        audio.play()
+            .then(() => {
+                // Activar el toggle visual
+                audioToggle.checked = true;
+            })
+            .catch(error => {
+                console.log("Error:", error);
+                // Algunos navegadores requieren interacción primero
+                alert("Haz clic en la página primero");
+            });
+    } else {
+        audio.pause();
+        audioToggle.checked = false;
+    }
+}
+
+// 3. Asignar evento al botón
+audioBtn.addEventListener('click', function(e) {
+    // Evita que se active dos veces por el checkbox
+    if (e.target !== audioToggle) {
+        toggleAudio();
+    }
+});
+
+// 4. Opcional: Resetear cuando termine el audio
+audio.addEventListener('ended', function() {
+    audioToggle.checked = false;
+});
+
+// 5. Para navegadores que bloquean autoplay
+document.addEventListener('click', function initAudio() {
+    audio.muted = false;
+    document.removeEventListener('click', initAudio);
+});
+</script>
 
 
 

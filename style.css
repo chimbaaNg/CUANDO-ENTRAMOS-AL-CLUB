@@ -57,29 +57,28 @@ body {
 #slider {
     position: relative;
     width: 90%;
-    max-width: 350px;
+    max-width: 380px;
     margin: 0 auto;
     margin-bottom: 90px;
-
     border-radius: 12px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.2);
-
-    overflow: visible; /* CLAVE: ya no recorta */
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.25);
 }
 
-/* Imágenes del slider */
+/* Imágenes */
 #slider .slide {
     width: 100%;
     height: auto;
-    display: none;        /* ocultamos todas */
-    object-fit: contain;  /* muestra completa */
+    display: block;
+    object-fit: contain;
     border-radius: 12px;
 }
 
-/* Solo se muestra la activa */
-#slider .slide.activa {
-    display: block;
+/* Solo la primera visible por defecto */
+#slider .slide:not(:first-child) {
+    display: none;
 }
+
 
 
 
@@ -331,6 +330,7 @@ body {
         font-size: 0.9rem;
     }
 }
+
 
 
 

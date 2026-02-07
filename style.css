@@ -266,7 +266,7 @@ body {
 
 /* Shine SOLO encima del texto */
 #boton-presave::after {
-    content: "Click si te ha gustado...";
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -339,3 +339,4 @@ body {
         font-size: 0.9rem;
     }
 }
+

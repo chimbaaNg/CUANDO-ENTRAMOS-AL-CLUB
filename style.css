@@ -93,7 +93,6 @@ body {
     }
 
     #slider .slide {
-        position: relative; /* ya no se superponen, se muestran */
         opacity: 1;         /* asegúrate que sean visibles */
         object-fit: contain; /* que no se recorten */
         width: 100%;
@@ -352,6 +351,7 @@ body {
         font-size: 0.9rem;
     }
 }
+
 
 
 

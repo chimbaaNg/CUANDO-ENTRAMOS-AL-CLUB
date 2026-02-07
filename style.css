@@ -1,0 +1,341 @@
+/* ================= RESET BASICO ================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* más tarde puedes poner tipografía urbana/Google Fonts */
+    background: #fff; /* fondo blanco */
+    color: #111; /* texto negro para contraste */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+/* ================= LOGO / TÍTULO ================= */
+#logo-titulo {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0 8px #ff00ff, 0 0 16px #ff00ff; /* glow estilo neón */
+}
+
+/* ================= CUENTA ATRÁS ================= */
+#cuenta-atras {
+    margin: 25px 0;
+    text-align: center;
+}
+
+#contador {
+    font-size: 2.3rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #111; /* palabras en negro */
+    text-shadow: none;
+}
+
+#contador span {
+    font-size: 3rem;
+    color: #d4af37; /* números en oro */
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.45);
+}
+
+
+
+
+
+/* ================= SLIDER PORTADA ================= */
+#slider {
+    position: relative;
+    width: 80%;        /* disminuye el ancho del slider */
+    max-width: 350px;  /* ancho máximo permitido */
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    height: auto;      /* altura automática según la imagen */
+}
+
+#slider .slide {
+    width: 100%;
+    height: auto;          /* mantiene proporción de la imagen */
+    object-fit: contain;   /* evita que se recorte */
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Opcional: que la primera imagen sea visible */
+#slider .slide:first-child {
+    opacity: 1;
+    position: relative;
+}
+
+
+
+/* ================= REPRODUCTOR AUDIO ================= */
+/* From Uiverse.io by saritha_7555 */ 
+.btn-wrapper {
+  --width: 150px;
+  --height: 60px;
+  --padding: 8px;
+  --border-radius: 24px;
+  --dot-size: 8px;
+  --btn-color: #000000;
+  --hue: 14deg;
+  --animation-duration: 1.2s;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  background-color: #00000008;
+  box-shadow:
+    1px 1px 2px 0 #fffd,
+    2px 2px 2px #0001 inset,
+    2px 2px 4px #0001 inset,
+    2px 2px 8px #0001 inset;
+  perspective: 150px;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    box-shadow 0.05s linear,
+    transform 0.05s linear;
+}
+
+.toggle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 0.25em;
+  text-align: left;
+  padding: 0 var(--height) 0 calc(var(--padding) * 2);
+  width: calc(100% - 2 * var(--padding));
+  height: calc(100% - 2 * var(--padding));
+  border-radius: calc(var(--border-radius) - var(--padding));
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(#fff2, #0001), var(--btn-color);
+  box-shadow:
+    1px 1px 2px -1px #fff inset,
+    0 2px 1px #00000010,
+    0 4px 2px #00000010,
+    0 8px 4px #00000010,
+    0 16px 8px #00000010,
+    0 32px 16px #00000010;
+  transition:
+    transform 0.15s cubic-bezier(0.25, 1.5, 0.5, 1.5),
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
+  z-index: 2;
+}
+
+.btn-txt {
+  position: absolute;
+  font-family: "Montserrat", "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.616);
+  background-image: linear-gradient(#000a, #555);
+  background-clip: text;
+  filter: drop-shadow(0 1px 0px #fff) drop-shadow(0 -1px 0px #0005);
+  transition: opacity 0.2s ease;
+}
+
+.playing {
+  opacity: 0;
+}
+
+.toggle:checked ~ .btn .play {
+  opacity: 0;
+}
+.toggle:checked ~ .btn .playing {
+  opacity: 1;
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  right: calc(var(--height) / 2 - var(--padding) / 2);
+  width: var(--dot-size);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: hsla(var(--hue), 0%, 50%, 0.1);
+  border: 1px solid hsla(var(--hue), 0%, 60%, 0.6);
+  box-shadow:
+    1px 1px 2px -1px #fffe inset,
+    0 2px 1px #00000010,
+    0 4px 2px #00000010,
+    0 8px 4px #00000010;
+  pointer-events: none;
+  z-index: 3;
+  transform: translateY(-50%);
+  transition: all 0.15s ease;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(0.8) translateY(-50%);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.3) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+.toggle:checked ~ .btn .dot {
+  animation: pulse var(--animation-duration) ease-in-out infinite;
+  background-color: hsl(var(--hue), 90%, 50%);
+  box-shadow:
+    0 0 6px 1px hsl(var(--hue), 100%, 50%),
+    0 0 20px 5px hsl(var(--hue), 100%, 60%, 0.4);
+}
+
+/* ----------------- Hover & Tactile Press ----------------- */
+.btn-wrapper:hover .btn,
+.btn-wrapper:focus-within .btn {
+  transform: translate3d(0, -2px, 2px);
+  filter: drop-shadow(
+    var(--padding) 0 var(--padding) hsla(var(--hue), 70%, 60%, 0.6)
+  );
+}
+
+.btn-wrapper:active .btn {
+  transform: translate3d(0, 2px, -2px);
+  box-shadow:
+    1px 1px 2px 0 #fff,
+    2px 2px 2px #0001 inset,
+    2px 2px 4px #0001 inset,
+    2px 2px 8px #0001 inset,
+    0 0 32px 2px hsla(var(--hue), 50%, 50%, 0.5) inset;
+}
+#audio-player {
+    margin-bottom: 40px; /* aumenta espacio debajo del play/pause */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* ================= PRESAVE BLOQUEADO / SHINE ================= */
+#boton-presave {
+    display: inline-block;
+    padding: 12px 48px;
+    background: #111; /* relleno real del botón */
+    border-radius: 50px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: not-allowed; /* mientras bloqueado */
+    box-shadow: 0 0 6px rgba(212, 175, 55, 0.35);
+    transition: all 0.3s ease;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    white-space: nowrap;
+    font-size: 16px;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    color: #d4af37; /* texto base dorado */
+}
+
+/* Shine SOLO encima del texto */
+#boton-presave::after {
+    content: "Click si te ha gustado...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to right, #777 0%, #d4af37 10%, #999 20%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* Oculta el texto original para que solo se vea el shine */
+#boton-presave span {
+    opacity: 0;
+}
+
+/* Shine animation */
+@keyframes shine {
+    0% { background-position: 0; }
+    100% { background-position: 200px; }
+}
+
+/* ================= PRESAVE DESBLOQUEADO ================= */
+#boton-presave.desbloqueado {
+    background: #ff00ff; /* neón rosa */
+    color: #54543D;
+    cursor: pointer;
+    box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+    animation: vibrar 0.2s ease-in-out;
+    -webkit-background-clip: unset; /* quita shine */
+    -webkit-text-fill-color: unset;
+}
+
+/* Vibración al desbloquear */
+@keyframes vibrar {
+    0% { transform: translateX(0px); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+    100% { transform: translateX(0px); }
+}
+
+/* Espacio debajo del reproductor/audio */
+#presave {
+    margin-top: 20px; /* ajusta según tu slider/audio */
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+@media screen and (max-width: 480px) {
+    #slider {
+        height: 300px;
+    }
+
+    #logo-titulo {
+        font-size: 1.5rem;
+    }
+
+    #contador {
+        font-size: 1rem;
+    }
+
+    #play-pause, #boton-presave {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}

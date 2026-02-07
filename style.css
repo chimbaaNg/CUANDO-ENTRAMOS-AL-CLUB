@@ -69,15 +69,23 @@ body {
 #slider .slide {
     width: 100%;
     height: auto;
-    display: block;
     object-fit: contain;
     border-radius: 12px;
+
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: opacity 1s ease-in-out;
 }
 
-/* Solo la primera visible por defecto */
-#slider .slide:not(:first-child) {
-    display: none;
+/* Imagen activa */
+#slider .slide.activa {
+    opacity: 1;
+    position: relative; /* le da altura al contenedor */
 }
+
 
 
 
@@ -330,6 +338,7 @@ body {
         font-size: 0.9rem;
     }
 }
+
 
 
 

@@ -56,35 +56,31 @@ body {
 /* ================= SLIDER PORTADA ================= */
 #slider {
     position: relative;
-    width: 90%;          /* en móvil más ancho */
+    width: 90%;
     max-width: 350px;
     margin: 0 auto;
     margin-bottom: 90px;
+
     border-radius: 12px;
-    overflow: hidden;
     box-shadow: 0 0 20px rgba(255,255,255,0.2);
 
-    /* CLAVE para que no se recorte */
-    aspect-ratio: 1 / 1; /* cuadrado tipo portada */
-    height: auto;
+    overflow: visible; /* CLAVE: ya no recorta */
 }
 
-/* Todas las imágenes */
+/* Imágenes del slider */
 #slider .slide {
     width: 100%;
-    height: 100%;
-    object-fit: contain; /* muestra la imagen completa sin cortar */
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: opacity 1s ease-in-out;
+    height: auto;
+    display: none;        /* ocultamos todas */
+    object-fit: contain;  /* muestra completa */
+    border-radius: 12px;
 }
 
-/* Primera visible */
-#slider .slide:first-child {
-    opacity: 1;
+/* Solo se muestra la activa */
+#slider .slide.activa {
+    display: block;
 }
+
 
 
 
@@ -343,6 +339,7 @@ body {
         font-size: 0.9rem;
     }
 }
+
 
 
 

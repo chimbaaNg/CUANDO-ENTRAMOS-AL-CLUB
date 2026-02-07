@@ -315,20 +315,6 @@ body {
 #presave {
     margin-top: 20px; /* ajusta según tu slider/audio */
 }
-@media screen and (max-width: 480px) {
-  #boton-presave {
-    padding: 12px 24px; /* menos ancho en móvil */
-    font-size: 14px;
-  }
-
-  #boton-presave::after {
-    font-size: 14px;
-    max-width: 90%;
-    text-align: center;
-    white-space: normal; /* permite salto de línea */
-  }
-}
-
 
 
 /* ================= RESPONSIVE ================= */
@@ -350,6 +336,7 @@ body {
         font-size: 0.9rem;
     }
 }
+
 
 
 

@@ -289,16 +289,7 @@ body {
     white-space: nowrap;
 }
 
-/* Oculta el texto original para que solo se vea el shine */
-#boton-presave span {
-    opacity: 0;
-}
 
-/* Shine animation */
-@keyframes shine {
-    0% { background-position: 0; }
-    100% { background-position: 200px; }
-}
 
 /* ================= PRESAVE DESBLOQUEADO ================= */
 #boton-presave.desbloqueado {
@@ -306,7 +297,7 @@ body {
     color: #54543D;
     cursor: pointer;
     box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
-    animation: vibrar 0.2s ease-in-out;
+    animation: vibrar 0.5s ease-in-out;
     -webkit-background-clip: unset; /* quita shine */
     -webkit-text-fill-color: unset;
 }
@@ -346,6 +337,7 @@ body {
         font-size: 0.9rem;
     }
 }
+
 
 
 

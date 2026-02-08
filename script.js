@@ -61,26 +61,30 @@ function actualizarCuentaAtras() {
 setInterval(actualizarCuentaAtras, 1000);
 actualizarCuentaAtras();
 
-// ===========================
-// REPRODUCTOR AUDIO PLAY/PAUSE
-// ===========================
+const audio = document.getElementById("audio");
+const playPauseBtn = document.getElementById("playPauseBtn");
+const tiempoAudio = document.getElementById("tiempo-audio");
+
 playPauseBtn.addEventListener("click", () => {
     if (audio.paused) {
         audio.play();
-        playPauseBtn.textContent = "⏸️"; // cambia el icono
+        playPauseBtn.textContent = "⏸️";
     } else {
         audio.pause();
         playPauseBtn.textContent = "▶️";
     }
-    audio.addEventListener("timeupdate", () => {
-    const minutosActual = Math.floor(audio.currentTime / 60);
-    const segundosActual = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
-    const minutosTotal = Math.floor(audio.duration / 60);
-    const segundosTotal = Math.floor(audio.duration % 60).toString().padStart(2, '0');
-    document.getElementById("tiempo-audio").textContent = `${minutosActual}:${segundosActual} / ${minutosTotal}:${segundosTotal}`;
 });
 
+audio.addEventListener("timeupdate", () => {
+    const minActual = Math.floor(audio.currentTime / 60);
+    const secActual = Math.floor(audio.currentTime % 60).toString().padStart(2, "0");
+
+    const minTotal = Math.floor(audio.duration / 60) || 0;
+    const secTotal = Math.floor(audio.duration % 60).toString().padStart(2, "0");
+
+    tiempoAudio.textContent = `${minActual}:${secActual} / ${minTotal}:${secTotal}`;
 });
+
 
 // ===========================
 // DESBLOQUEO DEL PRESAVE
@@ -111,3 +115,4 @@ presaveBtn.addEventListener("click", (e) => {
         e.preventDefault(); // bloqueado → no hace nada
     }
 });
+

@@ -53,28 +53,28 @@ body {
 
 
 
-/* ================= SLIDER PORTADA ================= */
+/* ================= SLIDER PORTADA FIX (MÓVIL + PC) ================= */
 #slider {
     position: relative;
     width: 90%;
     max-width: 380px;
     margin: 0 auto;
     margin-bottom: 90px;
-
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.25);
+
+    height: 420px; /* altura fija para que no recorte */
 }
 
 /* Imágenes */
 #slider .slide {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%; /* ocupa todo el alto del slider */
+    object-fit: contain; /* NO recorta */
+    object-position: center;
 
-    object-fit: contain;
     opacity: 0;
-
     position: absolute;
     top: 0;
     left: 0;
@@ -85,9 +85,7 @@ body {
 /* Imagen activa */
 #slider .slide.activa {
     opacity: 1;
-    position: relative;
 }
-
 
 
 
@@ -341,6 +339,7 @@ body {
         font-size: 0.9rem;
     }
 }
+
 
 
 

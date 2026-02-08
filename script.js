@@ -62,34 +62,7 @@ setInterval(actualizarCuentaAtras, 1000);
 actualizarCuentaAtras();
 
 
-// ===========================
-// DESBLOQUEO DEL PRESAVE
-// ===========================
-audio.addEventListener("ended", () => {
-    presaveBtn.classList.remove("bloqueado");
-    presaveBtn.classList.add("desbloqueado");
-    presaveBtn.style.cursor = "pointer"; // cambiar cursor
-});
 
-// SUPONIENDO que tu audio principal está controlado y al terminar se desbloquea:
-function desbloquearPresave() {
-    presaveBtn.classList.add("desbloqueado");
-    presaveBtn.classList.remove("bloqueado");
-    presaveBtn.style.cursor = "pointer";
-}
 
-// CLICK BOTÓN PRESAVE
-presaveBtn.addEventListener("click", (e) => {
-    // solo funciona si está desbloqueado
-    if (presaveBtn.classList.contains("desbloqueado")) {
-        e.preventDefault(); // evita abrir enlace antes de sonido si quieres
-        audioPresave.currentTime = 0;
-        audioPresave.play();
-        // si quieres, luego redirige al link
-        window.open(presaveBtn.href, "_blank");
-    } else {
-        e.preventDefault(); // bloqueado → no hace nada
-    }
-});
 
 

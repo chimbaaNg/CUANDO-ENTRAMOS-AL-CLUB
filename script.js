@@ -6,7 +6,7 @@ const contadorDias = document.getElementById("dias");
 const contadorHoras = document.getElementById("horas");
 const contadorMinutos = document.getElementById("minutos");
 const contadorSegundos = document.getElementById("segundos");
-const playPauseBtn = document.getElementById("play-pause");
+const playPauseBtn = document.getElementById("playPauseBtn");
 const audio = document.getElementById("audio");
 const logoTitulo = document.getElementById("logo-titulo");
 const presaveBtn = document.getElementById("boton-presave");
@@ -60,6 +60,7 @@ function actualizarCuentaAtras() {
 
 setInterval(actualizarCuentaAtras, 1000);
 actualizarCuentaAtras();
+
 
 
 

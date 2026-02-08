@@ -36,18 +36,14 @@
         <!-- Puedes añadir más imágenes en la carpeta images/ -->
     </section>
 
-    <!-- ================= REPRODUCTOR AUDIO ================= -->
-  <label class="btn-wrapper">
-  <input type="checkbox" class="toggle" />
-  <div class="btn">
-    <span class="btn-txt play">Play</span>
-    <span class="btn-txt playing">Playing</span>
-    <div class="dot"></div>
-  </div>
-</label>
-  <!-- Audio click del botón -->
-  <audio id="audio-presave" src="CEACPREVIEW.mp3.mpeg"></audio>
+    <!-- ================= AUDIO PLAYER ================= -->
+<section id="audio-player">
+    <button id="playPauseBtn">▶️</button>
+    <span id="tiempo-audio">0:00 / 0:00</span>
+
+    <audio id="audio" src="audio/CEACPREVIEW.mp3.mpeg"></audio>
 </section>
+
 
     <!-- ================= PRESAVE BLOQUEADO ================= -->
     <section id="presave">
@@ -63,6 +59,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 

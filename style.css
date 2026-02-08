@@ -58,7 +58,7 @@ body {
     position: relative;
     width: 90%;
     max-width: 380px;
-    margin: 0 auto;
+    margin: 5px;
     margin-bottom: 90px;
     border-radius: 12px;
     overflow: hidden;
@@ -182,6 +182,7 @@ body {
         font-size: 0.9rem;
     }
 }
+
 
 
 

@@ -30,7 +30,7 @@ body {
 
 /* ================= CUENTA ATRÁS ================= */
 #cuenta-atras {
-    margin: 25px 0;
+    margin: 20px 0;
     text-align: center;
 }
 
@@ -182,6 +182,7 @@ body {
         font-size: 0.9rem;
     }
 }
+
 
 
 

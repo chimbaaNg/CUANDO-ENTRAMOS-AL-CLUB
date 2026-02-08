@@ -1,1 +1,24 @@
+#audio-player {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#playPauseBtn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+}
+
+#tiempo-audio {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
 
